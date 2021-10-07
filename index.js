@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const addUser = require('./middlewares/AddUser');
+const addUser = require('./routers/AddUser');
 const bodyparser = require('body-parser');
 
 app.use(bodyparser.json());
