@@ -4,13 +4,13 @@ const bodyparser = require('body-parser');
 
 const addUser = require('./routers/AddUser');
 const getAllUser = require('./routers/GetUsers');
-const getUser = require('./routers/GetUser');
+const getUse = require('./routers/GetUser');
 
 app.use(bodyparser.json());
 
 app.use('/user', addUser);
 app.use('/users', getAllUser);
-app.use('/user', getUser);
+app.use('/user', getUse);
 
 const PORT = process.env.PORT || 3000;
 
