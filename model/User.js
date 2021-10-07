@@ -18,7 +18,7 @@ const getAll = async () => {
 };
 
 const getUserById = async (id) => {
-  const result = await connection().then((db) => db.collection('users').find({ _id: ObjectId(id) }));
+  const result = await connection().then((db) => db.collection('users').findOne({ _id: ObjectId(id) }));
   return result;
 };
 
