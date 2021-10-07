@@ -8,3 +8,5 @@ router.get('/:id', async (req, res) => {
   const response = getUserById(id);
   res.status(200).json(response);
 });
+
+module.exports = router;

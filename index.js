@@ -4,7 +4,7 @@ const bodyparser = require('body-parser');
 
 const addUser = require('./routers/AddUser');
 const getAllUser = require('./routers/GetUsers');
-const getUser = require('./routers/getUser');
+const getUser = require('./routers/GetUser');
 
 app.use(bodyparser.json());
 
