@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
+const bodyparser = require('body-parser');
 
 const addUser = require('./routers/AddUser');
-const bodyparser = require('body-parser');
+const getAllUser = require('./routers/GetUsers');
 
 app.use(bodyparser.json());
 
 app.use('/user', addUser);
+app.use('/users', getAllUser);
 
 const PORT = process.env.PORT || 3000;
 
