@@ -11,6 +11,12 @@ const create = async (firstName, lastName, email, password) => {
   };
 };
 
+const getAll = async () => {
+  const result = await connection().then((db) => db.collection('users').find().toArray());
+  return result;
+};
+
 module.exports = {
   create,
+  getAll,
 };
