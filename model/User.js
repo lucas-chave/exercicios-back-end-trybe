@@ -1,5 +1,6 @@
 const { connection } = require('./connection'); 
 const { ObjectId } = require('mongodb');
+const { response } = require('express');
 
 const create = async (firstName, lastName, email, password) => {
   const result = (await connection()
@@ -22,8 +23,15 @@ const getUserById = async (id) => {
   return result;
 };
 
+const updateUser = async (firstName, lastName, email, id) => {
+  const result = await connection()
+    .then((db) => db.collection('users').updateOne({ _id: ObjectId(id)}, { $set: { firstName, lastName, email, password } }));
+  return result;
+}
+
 module.exports = {
   create,
   getAll,
   getUserById,
+  updateUser,
 };
