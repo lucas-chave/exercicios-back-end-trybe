@@ -33,6 +33,12 @@ const updateUser = async (firstName, lastName, password, email, id) => {
   };
 }
 
+const deleteUserById = async (id) => {
+  const result = await connection()
+    .then((db) => db.collection('users').deleteOne({ _id: ObjectId(id) }));
+  return result;
+};
+
 module.exports = {
   create,
   getAll,
