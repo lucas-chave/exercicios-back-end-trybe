@@ -4,9 +4,9 @@ const router = express.Router();
 const { updateUser } = require('../model/User');
 
 router.put('/:id', async (req, res) => {
-  const { firstName, lastName, email } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   const { id } = req.params;
-  const response = updateUser(firstName, lastName, email, id);
+  const response = await updateUser(firstName, lastName, password, email, id);
   res.status(201).json(response);
 });
 

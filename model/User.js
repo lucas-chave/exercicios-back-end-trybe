@@ -23,10 +23,15 @@ const getUserById = async (id) => {
   return result;
 };
 
-const updateUser = async (firstName, lastName, email, id) => {
+const updateUser = async (firstName, lastName, password, email, id) => {
   const result = await connection()
     .then((db) => db.collection('users').updateOne({ _id: ObjectId(id)}, { $set: { firstName, lastName, email, password } }));
-  return result;
+  return {
+    id,
+    firstName,
+    lastName,
+    email,
+  };
 }
 
 module.exports = {
