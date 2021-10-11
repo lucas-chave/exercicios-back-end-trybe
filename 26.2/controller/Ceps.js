@@ -5,6 +5,7 @@ const getAll = async (_req, res) => {
     const ceps = await getAllCeps();
     res.status(200).json(ceps);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Aconteceu um erro ao buscar os dados no servidor' });
   }
 };
