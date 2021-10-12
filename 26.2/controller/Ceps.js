@@ -10,6 +10,16 @@ const getAll = async (_req, res) => {
   }
 };
 
+const getPing = async (_req, res) => {
+  try {
+    res.status(200).json({ message: 'pong!' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: 'erro ao realizar requisição' });
+  }
+};
+
 module.exports = {
   getAll,
+  getPing,
 };
