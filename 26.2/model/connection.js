@@ -12,7 +12,7 @@ let db = null;
 const connection = async () => {
   if (db) return Promise.resolve(db);
   const conn = await MongoClient.connect(MONGO_DB_URL, OPTIONS);
-  db = conn.db('cepLookup');
+  db = conn.db('cepLoookup');
   return db;
 };
 
