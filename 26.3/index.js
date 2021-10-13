@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/products', require('./controller/productController'));
+app.use('/', require('./controller/productController'));
 
 const PORT = process.env.PORT || 3000;
 
